@@ -2,12 +2,12 @@ package com.ttg.game.singleton
 
 object GameLevel {
 
-  lvl = 0
-
   private var _lvl: Int = 0
   private var _variablesQuantity: Int = 0
   private var _rowsQuantity: Int = 0
   private var _expectedResult: Int = 0
+
+  lvl = 0
 
   def variablesQuantity: Int = _variablesQuantity
 
