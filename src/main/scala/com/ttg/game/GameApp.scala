@@ -1,7 +1,7 @@
 package com.ttg.game
 
 import com.ttg.game.model.GameState
-import com.ttg.game.singleton.{GameLevel, Player, ProgramInterpreter, GameRenderer}
+import com.ttg.game.singleton.{GameLevel, GameRenderer, Player, ProgramInterpreter}
 import processing.core.PApplet
 
 class GameApp extends PApplet {
@@ -13,7 +13,7 @@ class GameApp extends PApplet {
   private val gameState = GameState.SCORES
 
   override def settings(): Unit = {
-    gameLevel.lvl = 0
+    gameLevel.lvl = 0 // TODO: load current lvl from save file
 
     size(1024, 768)
     //    fullScreen()

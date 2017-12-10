@@ -1,10 +1,10 @@
 package com.ttg.game.model
 
-case class Instruction(name: String, operator: (Boolean, Boolean) => Boolean)
+case class Instruction(name: Char, popsQuantity: Int, operator: (Boolean, Boolean) => Boolean)
 
 object Instruction {
-  val NOT = Instruction("~", (a: Boolean, _) => !a)
-  val AND = Instruction("&", (a: Boolean, b: Boolean) => a & b)
-  val OR = Instruction("|", (a: Boolean, b: Boolean) => a | b)
-  val XOR = Instruction("^", (a: Boolean, b: Boolean) => a ^ b)
+  val NOT = Instruction('~', 1, (a: Boolean, _) => !a)
+  val AND = Instruction('&', 2, (a: Boolean, b: Boolean) => a & b)
+  val OR  = Instruction('|', 2, (a: Boolean, b: Boolean) => a | b)
+  val XOR = Instruction('^', 2, (a: Boolean, b: Boolean) => a ^ b)
 }

@@ -1,6 +1,6 @@
 package com.ttg.game.singleton
 
-import com.ttg.game.model.GameState
+import com.ttg.game.model.{FunctionalException, GameState}
 import processing.core.PApplet
 
 object GameRenderer {
@@ -12,7 +12,7 @@ object GameRenderer {
 
   def drawState(gameState: GameState): Unit = {
     if (p == null)
-      throw new NullPointerException("no PApplet in Renderer! Call setup() first.")
+      throw FunctionalException.P_APPLET_MANDATORY
 
     p.background(0, 255, 0)
   }
