@@ -23,7 +23,8 @@ class GameLevelTest extends FlatSpec {
 
   "The GameLevel" should "setup correct values (lvl = 4)" in {
     val gameLevel = GameLevel
-    gameLevel.lvl = 4
+    gameLevel.lvl = 3
+    gameLevel.lvl += 1
     assert(gameLevel.lvl == 4)
     assert(gameLevel.variablesQuantity == 2)
     assert(gameLevel.rowsQuantity == 4)

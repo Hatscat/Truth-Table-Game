@@ -6,7 +6,7 @@ import scala.collection.mutable
 
 object ProgramInterpreter {
 
-  def eval(program: String, rowsQuantity: Int): Int = {
+  def eval(program: String, rowsQuantity: Int): Long = {
     val rowResults = for (i <- 0 until rowsQuantity if evalRow(program, i)) yield 1 << i
     rowResults.sum
   }
