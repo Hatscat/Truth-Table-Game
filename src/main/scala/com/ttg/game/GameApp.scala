@@ -15,12 +15,12 @@ class GameApp extends PApplet {
   override def settings(): Unit = {
     gameLevel.lvl = 0 // TODO: load current lvl from save file
 
-    size(1024, 768) // TODO: get screen width and height and send it to player and gameRenderer
+    size(450, 800) // TODO: get screen size
     //    fullScreen()
   }
 
   override def setup(): Unit = {
-    player.setup(this)
+    player.setup(this, gameLevel)
     gameRenderer.setup(this)
     gameRenderer.drawState(gameState, gameLevel, player)
   }
@@ -33,7 +33,7 @@ class GameApp extends PApplet {
           gameLevel.lvl += 1
           player.reset()
         case GameState.GAME =>
-          if (!player.program.isEmpty && programInterpreter.eval(player.program, gameLevel.rowsQuantity) == gameLevel.expectedResult)
+          if (player.checkVictory(programInterpreter))
             gameState = GameState.SCORE
       }
       gameRenderer.drawState(gameState, gameLevel, player)
