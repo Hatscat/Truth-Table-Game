@@ -21,10 +21,23 @@ object GameLevel {
     _lvl = n
     _variablesQuantity = 1 + log2(log2(_lvl - oneRotOneRotSum(log2(log2(_lvl)))))
     _rowsQuantity = 1 << _variablesQuantity
-    _expectedResult = _lvl - oneRotOneRotSum(_variablesQuantity)
+    _expectedResult = shuffleIndex(_lvl - oneRotOneRotSum(_variablesQuantity), 1 << _rowsQuantity)
   }
 
   private def log2(n: Long): Int = n.toBinaryString.length - 1
 
   private def oneRotOneRotSum(i: Int): Int = ((i - 1) to 1 by -1).fold(0) { (a, b) => a + (1 << (1 << b)) }
+
+  private def shuffleIndex(i: Long, len: Long): Long = {
+    // reverse i
+    var c = len - i - 1
+    // shift i
+    c = (c + 6789) % len
+    // 2d map, y way
+    val w = 1 << 2
+    val h = len / w
+    val y = c / w | 0
+    val x = c % w
+    x * h + y
+  }
 }

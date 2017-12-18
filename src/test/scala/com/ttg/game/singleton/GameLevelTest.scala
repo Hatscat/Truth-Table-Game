@@ -18,7 +18,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 3)
     assert(gameLevel.variablesQuantity == 1)
     assert(gameLevel.rowsQuantity == 2)
-    assert(gameLevel.expectedResult == 3)
+    assert(gameLevel.expectedResult == 1)
   }
 
   "The GameLevel" should "setup correct values (lvl = 4)" in {
@@ -28,7 +28,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 4)
     assert(gameLevel.variablesQuantity == 2)
     assert(gameLevel.rowsQuantity == 4)
-    assert(gameLevel.expectedResult == 0)
+    assert(gameLevel.expectedResult == 1)
   }
 
   "The GameLevel" should "setup correct values (lvl = 19)" in {
@@ -37,7 +37,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 19)
     assert(gameLevel.variablesQuantity == 2)
     assert(gameLevel.rowsQuantity == 4)
-    assert(gameLevel.expectedResult == 15)
+    assert(gameLevel.expectedResult == 5)
   }
 
   "The GameLevel" should "setup correct values (lvl = 20)" in {
@@ -46,7 +46,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 20)
     assert(gameLevel.variablesQuantity == 3)
     assert(gameLevel.rowsQuantity == 8)
-    assert(gameLevel.expectedResult == 0)
+    assert(gameLevel.expectedResult == 33)
   }
 
   "The GameLevel" should "setup correct values (lvl = 275)" in {
@@ -55,7 +55,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 275)
     assert(gameLevel.variablesQuantity == 3)
     assert(gameLevel.rowsQuantity == 8)
-    assert(gameLevel.expectedResult == 255)
+    assert(gameLevel.expectedResult == 97)
   }
 
   "The GameLevel" should "setup correct values (lvl = 276)" in {
@@ -64,7 +64,7 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 276)
     assert(gameLevel.variablesQuantity == 4)
     assert(gameLevel.rowsQuantity == 16)
-    assert(gameLevel.expectedResult == 0)
+    assert(gameLevel.expectedResult == 1697)
   }
 
   "The GameLevel" should "setup correct values (lvl = 65811)" in {
@@ -82,6 +82,6 @@ class GameLevelTest extends FlatSpec {
     assert(gameLevel.lvl == 65812)
     assert(gameLevel.variablesQuantity == 5)
     assert(gameLevel.rowsQuantity == 32)
-    assert(gameLevel.expectedResult == 0)
+    assert(gameLevel.expectedResult == 18081)
   }
 }

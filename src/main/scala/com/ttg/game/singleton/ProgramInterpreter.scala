@@ -12,7 +12,6 @@ object ProgramInterpreter {
   }
 
   private def evalRow(program: String, row: Int): Boolean = {
-
     if (program.isEmpty)
       throw FunctionalException.EMPTY_PROGRAM
 
@@ -25,12 +24,10 @@ object ProgramInterpreter {
       case Instruction.XOR.name => execInstOnStack(Instruction.XOR, stack)
       case variable => stack.push(getVariableValue(variable, row))
     }
-
     stack.pop()
   }
 
   private def execInstOnStack(instruction: Instruction, stack: mutable.Stack[Boolean]): Unit = {
-
     if (stack.lengthCompare(instruction.popsQuantity) < 0)
       throw FunctionalException.EMPTY_STACK
 
