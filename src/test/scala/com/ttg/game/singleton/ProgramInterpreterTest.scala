@@ -20,16 +20,14 @@ class ProgramInterpreterTest extends FlatSpec {
   }
 
   "The ProgramInterpreter" should "gives the correct answer for the lvl" in {
-    val gameLevel = GameLevel
     val programInterpreter = ProgramInterpreter
-    assert(programInterpreter.eval("AA~&", gameLevel.rowsQuantity) == gameLevel.expectedResult)
+    assert(programInterpreter.eval("AA~&", GameLevel.rowsQuantity) == GameLevel.expectedResult)
   }
 
   "The ProgramInterpreter" should "gives the correct answer for the lvl 13" in {
-    val gameLevel = GameLevel
     val programInterpreter = ProgramInterpreter
-    gameLevel.lvl = 13 // expected result == 14 -> 1110
-    assert(programInterpreter.eval("AB|", gameLevel.rowsQuantity) == gameLevel.expectedResult)
+    GameLevel.lvl = 13 // expected result == 14 -> 1110
+    assert(programInterpreter.eval("AB|", GameLevel.rowsQuantity) == GameLevel.expectedResult)
   }
 
   "The ProgramInterpreter" should "eval a program and return the expected result" in {

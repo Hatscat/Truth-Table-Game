@@ -13,7 +13,7 @@ class GameApp extends PApplet {
   private var gameState = GameState.SCORE
 
   override def settings(): Unit = {
-    gameLevel.lvl = 0 // TODO: load current lvl from save file
+    gameLevel.lvl = -1 // TODO: load current lvl from save file
 
     size(450, 800) // TODO: get screen size
     //    fullScreen()

@@ -32,7 +32,7 @@ object GameLevel {
     // reverse i
     var c = len - i - 1
     // shift i
-    c = (c + 6789) % len
+    c = (c + 6771) % len
     // 2d map, y way
     val w = 1 << 2
     val h = len / w

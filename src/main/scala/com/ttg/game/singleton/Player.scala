@@ -8,6 +8,7 @@ object Player {
 
   private val _scrollThreshold = 0.1F
   private var _program: String = _
+  private var _programOutput: Long = _
   private var _pressedButton: Button = _
   private var _keyboardIsVisible: Boolean = _
   private var _scrollDelta: Int = _
@@ -26,6 +27,8 @@ object Player {
 
   def program: String = _program
 
+  def programOutput: Long = _programOutput
+
   def error: FunctionalException = _error
 
   def setup(pApplet: PApplet, gameLevel: GameLevel.type): Unit = {
@@ -36,8 +39,9 @@ object Player {
 
   def reset(): Unit = {
     _program = ""
+    _programOutput = 0
     _pressedButton = null
-    _keyboardIsVisible = false
+    _keyboardIsVisible = true
     _previousTouchY = _p.mouseY
     _scrollDelta = 0
     _touchClicked = false
@@ -89,7 +93,8 @@ object Player {
   def checkVictory(programInterpreter: ProgramInterpreter.type): Boolean = {
     _error = null
     try {
-      if (programInterpreter.eval(_program, _gameLevel.rowsQuantity) == _gameLevel.expectedResult)
+      _programOutput = programInterpreter.eval(_program, _gameLevel.rowsQuantity)
+      if (_programOutput == _gameLevel.expectedResult)
         return true
     }
     catch {
