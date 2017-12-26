@@ -11,11 +11,12 @@ class GameApp extends PApplet {
   private val programInterpreter = ProgramInterpreter
   private val gameRenderer = GameRenderer
   private var gameState = GameState.SCORE
+  private var levelComplete = false
 
   override def settings(): Unit = {
-    gameLevel.lvl = -1 // TODO: load current lvl from save file
+    gameLevel.lvl = 0 // TODO: load current lvl from save file
 
-    size(450, 800) // TODO: get screen size
+    size(450, 800)
     //    fullScreen()
   }
 
@@ -26,15 +27,21 @@ class GameApp extends PApplet {
   }
 
   override def draw(): Unit = {
+    if (levelComplete) {
+      levelComplete = false
+      delay(900)
+      gameLevel.lvl += 1
+      gameState = GameState.SCORE
+      gameRenderer.drawState(gameState, gameLevel, player)
+      player.reset()
+    }
     if (player.checkInputs(gameState)) {
       gameState match {
         case GameState.SCORE =>
           gameState = GameState.GAME
-          gameLevel.lvl += 1
-          player.reset()
         case GameState.GAME =>
           if (player.checkVictory(programInterpreter))
-            gameState = GameState.SCORE
+            levelComplete = true
       }
       gameRenderer.drawState(gameState, gameLevel, player)
     }

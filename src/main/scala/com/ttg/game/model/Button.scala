@@ -3,7 +3,7 @@ package com.ttg.game.model
 case class Button(name: String, minVarsThreshold: Int, x: Float, y: Float, w: Float, h: Float)
 
 object Button {
-  val PLAY = Button("PLAY", 0, 0.3F, 0.45F, 0.4F, 0.1F)
+  val PLAY = Button("PLAY", 0, 0.3F, 0.55F, 0.4F, 0.1F)
   val PROGRAM_FIELD = Button("PROGRAM", 0, 0F, 0F, 1F, 0.11F)
 
   private val _buttonW = 0.152F

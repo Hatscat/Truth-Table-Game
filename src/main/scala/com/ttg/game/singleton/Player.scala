@@ -6,15 +6,12 @@ import processing.core.PApplet
 
 object Player {
 
-  private val _scrollThreshold = 0.1F
   private var _program: String = _
   private var _programOutput: Long = _
   private var _pressedButton: Button = _
   private var _keyboardIsVisible: Boolean = _
   private var _scrollDelta: Int = _
-  private var _previousTouchY: Int = _
   private var _touchClicked: Boolean = _
-  private var _touchReleased: Boolean = _
   private var _error: FunctionalException = _
   private var _p: PApplet = _
   private var _gameLevel: GameLevel.type = _
@@ -41,17 +38,14 @@ object Player {
     _program = ""
     _programOutput = 0
     _pressedButton = null
-    _keyboardIsVisible = true
-    _previousTouchY = _p.mouseY
+    _keyboardIsVisible = false // true?
     _scrollDelta = 0
     _touchClicked = false
-    _touchReleased = false
     _error = null
   }
 
   def checkInputs(gameState: GameState): Boolean = {
     if (checkClick()) {
-      _scrollDelta = 0
       gameState.buttonList.foreach(button => {
         if (Collision.isPointInBox(_p.mouseX, _p.mouseY, button.x * _p.width, button.y * _p.height, button.w * _p.width, button.h * _p.height)) {
           button match {
@@ -64,22 +58,13 @@ object Player {
         }
       })
     }
-    if (gameState == GameState.GAME) {
-      if (_p.mousePressed) {
-        if (_touchReleased) {
-          _previousTouchY = _p.mouseY
-          _touchReleased = false
-        }
-
-        val scroll = _p.mouseY - _previousTouchY
-        if (Math.abs(scroll) > _scrollThreshold * _p.height) {
-          _scrollDelta = scroll
-          return true
-        }
-      }
-      else {
-        _touchReleased = true
-      }
+    if (gameState == GameState.GAME && _p.mousePressed) {
+      _scrollDelta = _p.mouseY - _p.pmouseY
+      if (scrollDelta * scrollDelta > 1)
+        return true
+    }
+    else {
+      _scrollDelta = 0
     }
     false
   }
@@ -94,8 +79,10 @@ object Player {
     _error = null
     try {
       _programOutput = programInterpreter.eval(_program, _gameLevel.rowsQuantity)
-      if (_programOutput == _gameLevel.expectedResult)
+      if (_programOutput == _gameLevel.expectedResult) {
+        _keyboardIsVisible = false
         return true
+      }
     }
     catch {
       case e: FunctionalException =>
