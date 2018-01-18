@@ -47,8 +47,8 @@ class GameApp extends PApplet {
     }
   }
 }
-
-object GameApp extends App {
-  PApplet.main("com.ttg.game.GameApp")
-}
+//
+//object GameApp extends App {
+//  PApplet.main(Array("com.ttg.game.GameApp"))
+//}
 

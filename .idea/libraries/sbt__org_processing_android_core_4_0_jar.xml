@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sbt: org.processing:android-core:4.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/processing-AndroidMode/processing-android-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

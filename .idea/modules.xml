@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-animated-vector-drawable-24.0.0.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-animated-vector-drawable-24.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-animated-vector-drawable-24.0.0-build.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-animated-vector-drawable-24.0.0-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-appcompat-v7-24.0.0.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-appcompat-v7-24.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-appcompat-v7-24.0.0-build.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-appcompat-v7-24.0.0-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-support-v4-24.0.0.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-support-v4-24.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-support-v4-24.0.0-build.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-support-v4-24.0.0-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-support-vector-drawable-24.0.0.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-support-vector-drawable-24.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.android.support-support-vector-drawable-24.0.0-build.iml" filepath="$PROJECT_DIR$/.idea/modules/com.android.support-support-vector-drawable-24.0.0-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/truth-table-game.iml" filepath="$PROJECT_DIR$/.idea/modules/truth-table-game.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/truth-table-game-build.iml" filepath="$PROJECT_DIR$/.idea/modules/truth-table-game-build.iml" />
     </modules>

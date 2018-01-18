@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="truth-table-game">
-      <option name="postfixOps" value="true" />
+    <profile name="sbt 2" modules="com.android.support-animated-vector-drawable-24.0.0,com.android.support-animated-vector-drawable-24.0.0,com.android.support-appcompat-v7-24.0.0,com.android.support-appcompat-v7-24.0.0,com.android.support-support-v4-24.0.0,com.android.support-support-v4-24.0.0,com.android.support-support-vector-drawable-24.0.0,com.android.support-support-vector-drawable-24.0.0,truth-table-game,truth-table-game">
+      <parameters>
+        <parameter value="-bootclasspath" />
+        <parameter value="C:\Users\lubou\AppData\Local\Android\Sdk\platforms\android-27\android.jar" />
+        <parameter value="-javabootclasspath" />
+        <parameter value="C:\Users\lubou\AppData\Local\Android\Sdk\platforms\android-27\android.jar" />
+      </parameters>
     </profile>
   </component>
 </project>
