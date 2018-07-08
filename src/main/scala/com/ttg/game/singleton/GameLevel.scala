@@ -21,7 +21,7 @@ object GameLevel {
     _lvl = n
     _variablesQuantity = 1 + log2(log2(_lvl - oneRotOneRotSum(log2(log2(_lvl)))))
     _rowsQuantity = 1 << _variablesQuantity
-    _expectedResult = shuffleIndex(_lvl - oneRotOneRotSum(_variablesQuantity), 1L << _rowsQuantity)
+    _expectedResult = _lvl //shuffleIndex(_lvl - oneRotOneRotSum(_variablesQuantity), 1L << _rowsQuantity)
   }
 
   private def log2(n: Long): Int = n.toBinaryString.length - 1

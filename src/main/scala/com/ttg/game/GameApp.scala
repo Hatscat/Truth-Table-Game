@@ -14,7 +14,7 @@ class GameApp extends PApplet {
   private var levelComplete = false
 
   override def settings(): Unit = {
-    gameLevel.lvl = 0 // TODO: load current lvl from save file
+    gameLevel.lvl = 30//0 // TODO: load current lvl from save file
 
     size(450, 800)
     //    fullScreen()
